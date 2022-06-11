@@ -1,0 +1,28 @@
+@prefix Profile: <http://www.example.org/university/london/city#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+Profile:Majid a foaf:Person ;
+    Profile:Surname "Ahmed"^^xsd:string ;
+    Profile:bornincity "Karachi"^^xsd:string ;
+    Profile:bornincountry "Pakistan"^^xsd:string ;
+    Profile:currentyear "2021"^^xsd:gYear ;
+    Profile:speaklanguage1 "Arabic"^^xsd:string ;
+    Profile:speaklanguage2 "Urdu"^^xsd:string ;
+    Profile:startyear "2019"^^xsd:gYear ;
+    Profile:student Profile:Person ;
+    Profile:studyat "FAST"^^xsd:string ;
+    foaf:name "Majid"^^xsd:string .
+
+Profile:Person a Profile:Module .
+
+[] a rdf:Statement ;
+    rdf:predicate Profile:bornincity,
+        Profile:currentyear,
+        Profile:speaklanguage1,
+        Profile:speaklanguage2,
+        Profile:startyear,
+        Profile:studyat ;
+    rdf:subject Profile:student .
+
